@@ -85,19 +85,6 @@ function findSpeedInReading($r) {
     <meta charset="UTF-8">
     <title>Leituras - <?= htmlspecialchars($device_id) ?></title>
     <link rel="stylesheet" href="../css/locations.css">
-    <style>
-        .alert-row {
-            background-color: #ffe6e6 !important;
-            border-left: 4px solid #e04a4a !important;
-        }
-        .alert-icon {
-            margin-right:6px;
-            color: #c02a2a;
-            font-weight: bold;
-        }
-        .pagination { margin-top:20px; display:flex; justify-content:space-between; align-items:center; }
-        .btn-page { padding:6px 12px; background:#444; color:#fff; text-decoration:none; border-radius:6px; }
-    </style>
 </head>
 <body>
 
@@ -150,6 +137,12 @@ function findSpeedInReading($r) {
                 $isAlert = false;
                 if ($deviceType === "traffic_sensor" && $threshold !== null && $speedVal !== null) {
                     if ($speedVal < ($threshold / 2.0)) {
+                        $isAlert = true;
+                    }
+                } elseif ($deviceType === "camera") {
+                    $status = $r["status"];
+                    
+                    if($status === "open") {
                         $isAlert = true;
                     }
                 }
