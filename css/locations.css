@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef1f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    font-size: 26px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #4a76a8;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover td {
+    background: #eef4ff;
+}
+
+a.btn {
+    text-decoration: none;
+    background: #4a76a8;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+a.btn:hover {
+    background: #3a5a82;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.logout {
+    text-decoration: none;
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.logout:hover {
+    text-decoration: underline;
+}
+
+.search-box {
+    margin: 10px 0 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+.search-box button {
+    padding: 8px 14px;
+    background: #4a76a8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #355a80;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+table th, table td {
+    padding: 8px 12px;
+    text-align: left;
+
+    /* impede que células fiquem enormes */
+    max-width: 200px;
+
+    /* permite quebra de linha */
+    white-space: normal;
+
+    /* quebra palavras muito longas */
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: white;
+    background: #444;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.back:hover {
+    background: #666;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.btn-page {
+    padding: 6px 15px;
+    background: #444;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-page:hover {
+    background: #666;
+}
