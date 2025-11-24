@@ -30,6 +30,9 @@ if ($search !== "") {
 
 
 $devices = $collection->find($filter);
+$locationCol = $client->iot_monitoring->locations;
+$location = $locationCol->find(["location_id" => $location_ref])->toArray()[0];
+
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +51,14 @@ $devices = $collection->find($filter);
             <h2>Tabela de Dispositivos</h2>
             <a href="../logout.php" class="logout">Sair</a>
         </div>
-        
+
+        <h3>Cruzamento: <?= $location['description'] ?></h3>
+        <h3>Número de faixas: <?= $location['num_lanes'] ?></h3>
+        <h3>Tipo de Interseção: <?= $location['intersection_type'] ?></h3>
+        <h3>Categoria de Volume de Tráfego: <?= $location['traffic_volume_category'] ?></h3>
+
+        <a class="back" href="locations.php">← Voltar</a>
+
         <form method="GET" class="search-box">
         <input type="text" name="search" placeholder="Buscar dispositivo..." value="<?= $_GET['search'] ?? '' ?>">
         <button type="submit">Pesquisar</button>

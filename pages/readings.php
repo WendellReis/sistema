@@ -95,8 +95,19 @@ function findSpeedInReading($r) {
             <h2>Leituras do Dispositivo: <?= htmlspecialchars($device_id) ?></h2>
             <a href="../logout.php" class="logout">Sair</a>
         </div>
+        <?php if ($device["device_type"] === "traffic_light"): ?>
+            <h3>Fase Semafórica: <?= $device["phase_id"] ?></h3>
+        <?php endif; ?>
         <?php if ($device["device_type"] === "traffic_sensor"): ?>
             <h3>Limite de velocidade: <?= $threshold ?> km/h</h3>
+            <h3>Método de Leitura: <?= $device["config"]["detection_method"] ?></h3>
+            <h3>Taxa de Amostragem: <?= $device["config"]["sampling_rate_s"] ?>s</h3>
+        <?php endif; ?>
+        <?php if ($device["device_type"] === "camera"): ?>
+            <h3>Resolução: <?= $device["config"]["resolution"] ?></h3>
+            <h3>Taxa de Quadros: <?= $device["config"]["framerate"]?>fps</h3>
+            <h3>Ângulo de Visão: <?= $device["config"]["view_angle_degrees"] ?>°</h3>
+            <h3>Política de Armazenamento: <?= $device["config"]["image_storage_policy"] ?></h3>
         <?php endif; ?>
 
         
